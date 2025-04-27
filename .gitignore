@@ -1,0 +1,5 @@
+# NetBeans build output
+build/
+
+# NetBeans private IDE settings
+nbproject/private/
