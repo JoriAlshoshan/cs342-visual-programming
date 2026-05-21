@@ -44,7 +44,7 @@ I was responsible for designing and implementing several core screens and backen
 
 #### Edit User Profile (Manager)
 - Designed the interface for searching and editing user profiles
-- Implemented user data retrieval through `DataOperation`
+- Implemented user data retrieval through the `DataOperation` class
 - Tested search functionality and edit actions
 
 #### View & Update User Information
@@ -75,9 +75,11 @@ getUserInfo()
 updateUserInfo(User user)
 ```
 
-#### Testing
+---
 
-The system was tested across multiple scenarios to ensure reliability, including:
+## Functional Testing
+
+The implemented features were tested to ensure correct system behavior, including:
 
 - Empty input validation
 - Invalid email handling
