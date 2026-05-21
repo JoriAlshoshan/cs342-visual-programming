@@ -79,9 +79,9 @@ updateUserInfo(User user)
 
 The system was tested across multiple scenarios to ensure reliability, including:
 
-Empty input validation
-Invalid email handling
-Authentication failures
-Role-based navigation
-Profile update verification
-UI interaction testing
+- Empty input validation
+- Invalid email handling
+- Authentication failures
+- Role-based navigation
+- Profile update verification
+- UI interaction testing
