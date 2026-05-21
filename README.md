@@ -1,73 +1,87 @@
-Library Management System
+# Library Management System 📚
 
-Team Member: Jori Alshoshan
+A Java-based desktop application designed to manage library operations, including user registration, authentication, profile management, and role-based access for users and managers.
 
-Contribution Overview:
+## Team Member
+**Jori Alshoshan**
 
-I was responsible for the design and implementation of the following screens and components of the Library Management System.
+## Project Contribution
 
-1. Registration Screen
+I was responsible for designing and implementing several core screens and backend functionalities of the Library Management System.
 
-Layout: Main panel with BorderLayout. Divided into three sections: top (image), center (form fields), and bottom (register button).
+### Implemented Screens
 
-Database Interaction: Used DataOperation class to add new users to the database.
+#### Registration Screen
+- Designed the user registration interface using `BorderLayout`
+- Divided the layout into image, form, and action sections
+- Connected the screen to the database through the `DataOperation` class
+- Implemented input validation using a custom `RegistrationException`
+- Tested scenarios including:
+  - Empty input fields
+  - Invalid email format
+  - Incorrect password entries
 
-Validation: Implemented error handling for username, email, and password using custom exception class RegistrationException.
+#### Login Screen
+- Built the login interface using `BorderLayout`
+- Implemented authentication logic using `DataOperation`
+- Added role-based access control for users and managers
+- Tested:
+  - Missing credentials
+  - Invalid login attempts
+  - Successful redirection based on user role
 
-Testing: Validated different scenarios like empty fields, invalid email format, and incorrect password.
+#### Manager Home Screen
+- Designed the manager dashboard using `GridBagLayout`
+- Added navigation controls and welcome interface
+- Tested layout consistency and button functionality
 
-2. Login Screen
+#### User Home Screen
+- Designed the user dashboard with role-specific options
+- Added features such as:
+  - Search Books
+  - Borrowing History
+- Tested interface behavior and navigation actions
 
-Layout: Main panel with BorderLayout. Includes top (image), center (login form), and bottom (login/register buttons).
+#### Edit User Profile (Manager)
+- Designed the interface for searching and editing user profiles
+- Implemented user data retrieval through `DataOperation`
+- Tested search functionality and edit actions
 
-Database Interaction: Used DataOperation class to verify user credentials and determine user type (user or manager).
+#### View & Update User Information
+- Built the interface for updating user information
+- Connected update actions to the database using `updateUserInfo()`
+- Verified successful database updates
 
-Testing: Tested various login scenarios such as missing fields, invalid users, and proper redirection based on user type.
+---
 
-3. Manager Home Screen
+## Backend Contribution
 
-Layout: Used GridBagLayout to arrange user image, navigation buttons, and a welcome message.
+### DataOperation Class
+The `DataOperation` class was responsible for managing all database interactions.
 
-Testing: Validated button actions and layout consistency.
+#### Responsibilities
+- Establishing JDBC connections with the SQL database
+- Executing queries for:
+  - User registration
+  - Login authentication
+  - User information retrieval
+  - User data updates
 
-4. User Home Screen
+#### Implemented Methods
+```java
+AddNewUsers(User user)
+ValiditUser(String username, String password)
+getUserInfo()
+updateUserInfo(User user)
+```
 
-Layout: Similar to Manager Home Screen but with user-specific options such as "Search Books" and "Borrowing History."
+#### Testing
 
-Testing: Verified button actions and layout adjustments.
+The system was tested across multiple scenarios to ensure reliability, including:
 
-5. Edit User Profile Screen (Manager)
-
-Layout: GridBagLayout with sections for search functionality, editable user list, and control buttons.
-
-Database Interaction: Retrieved and displayed user information using DataOperation class.
-
-Testing: Validated search functionality and edit actions.
-
-6. View and Edit User Info Screen (Manager)
-
-Layout: Main panel with BorderLayout, sections for logo, editable user info, and buttons for updating.
-
-Database Interaction: Used updateUserInfo method to update user information in the database.
-
-Testing: Verified that user info updates correctly in the database.
-
-DataOperation Class
-
-The DataOperation class centralizes all database connectivity and operations:
-
-Responsibilities:
-
-Establishing JDBC connections to the SQL database.
-
-Executing queries and updates for user registration, login validation, information retrieval, and updates.
-
-Key Methods:
-
-AddNewUsers(User user): Inserts a new user record.
-
-ValiditUser(String username, String password): Checks credentials and returns user role.
-
-getUserInfo(): Retrieves all user records as User objects.
-
-updateUserInfo(User user): Updates existing user details in the database.
+Empty input validation
+Invalid email handling
+Authentication failures
+Role-based navigation
+Profile update verification
+UI interaction testing
